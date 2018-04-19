@@ -40,11 +40,11 @@ public class Ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_load = new javax.swing.JButton();
-        pn_origin = new javax.swing.JPanel();
         pn_final = new javax.swing.JScrollPane();
         btn_savePicture = new javax.swing.JButton();
         lbl_title = new javax.swing.JLabel();
         separator = new javax.swing.JSeparator();
+        originPanel1 = new Interface.OriginPanel();
         lbl_sourceTitle = new javax.swing.JLabel();
         lbl_mosaicTitle = new javax.swing.JLabel();
         lbl_background = new javax.swing.JLabel();
@@ -65,6 +65,7 @@ public class Ventana extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 740));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_load.setBackground(new java.awt.Color(255, 255, 255));
         btn_load.setFont(new java.awt.Font("Open Sans", 1, 11)); // NOI18N
@@ -74,42 +75,50 @@ public class Ventana extends javax.swing.JFrame {
                 btn_loadActionPerformed(evt);
             }
         });
-
-        pn_origin.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout pn_originLayout = new javax.swing.GroupLayout(pn_origin);
-        pn_origin.setLayout(pn_originLayout);
-        pn_originLayout.setHorizontalGroup(
-            pn_originLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        pn_originLayout.setVerticalGroup(
-            pn_originLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
-        );
+        getContentPane().add(btn_load, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
         pn_final.setBackground(new java.awt.Color(204, 204, 204));
         pn_final.setForeground(new java.awt.Color(102, 102, 102));
+        getContentPane().add(pn_final, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 157, 590, 520));
 
         btn_savePicture.setBackground(new java.awt.Color(255, 255, 255));
         btn_savePicture.setFont(new java.awt.Font("Open Sans", 1, 11)); // NOI18N
         btn_savePicture.setText("Save picture");
+        getContentPane().add(btn_savePicture, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 109, -1, -1));
 
         lbl_title.setFont(new java.awt.Font("Amatic SC", 1, 36)); // NOI18N
         lbl_title.setForeground(new java.awt.Color(255, 255, 255));
         lbl_title.setText("CreativeSquares");
+        getContentPane().add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 200, 50));
 
         separator.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 70, 520));
+
+        javax.swing.GroupLayout originPanel1Layout = new javax.swing.GroupLayout(originPanel1);
+        originPanel1.setLayout(originPanel1Layout);
+        originPanel1Layout.setHorizontalGroup(
+            originPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        originPanel1Layout.setVerticalGroup(
+            originPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(originPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         lbl_sourceTitle.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
         lbl_sourceTitle.setForeground(new java.awt.Color(255, 255, 255));
         lbl_sourceTitle.setText("Source");
+        getContentPane().add(lbl_sourceTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
 
         lbl_mosaicTitle.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
         lbl_mosaicTitle.setForeground(new java.awt.Color(255, 255, 255));
         lbl_mosaicTitle.setText("Mosaic");
+        getContentPane().add(lbl_mosaicTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 70, -1, -1));
 
         lbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        getContentPane().add(lbl_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         mnu_file.setText("File");
 
@@ -153,61 +162,6 @@ public class Ventana extends javax.swing.JFrame {
         mnb_mainMenu.add(mnu_about);
 
         setJMenuBar(mnb_mainMenu);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(240, 240, 240)
-                .addComponent(lbl_sourceTitle)
-                .addGap(609, 609, 609)
-                .addComponent(lbl_mosaicTitle))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(650, 650, 650)
-                .addComponent(btn_savePicture))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(pn_origin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(pn_final, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(btn_load))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(600, 600, 600)
-                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(510, 510, 510)
-                .addComponent(lbl_title, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(lbl_background, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_sourceTitle)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lbl_mosaicTitle)))
-                .addGap(7, 7, 7)
-                .addComponent(btn_savePicture)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pn_origin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pn_final, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(btn_load))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(lbl_title, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(lbl_background, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -278,8 +232,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator mnu_separator1;
     private javax.swing.JPopupMenu.Separator mnu_separator2;
     private javax.swing.JPopupMenu.Separator mnu_separator3;
+    private Interface.OriginPanel originPanel1;
     private javax.swing.JScrollPane pn_final;
-    private javax.swing.JPanel pn_origin;
     private javax.swing.JSeparator separator;
     // End of variables declaration//GEN-END:variables
 }
